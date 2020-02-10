@@ -12,6 +12,9 @@ sudo timedatectl set-local-rtc 1 --adjust-system-clock
 # Installing ibcanaberra gtk module if missing (for intellijIdea)
 sudo apt-get install --reinstall libcanberra-gtk-module
 
+# Enable click to minimize on Ubuntu using command line
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
+
 ################################################
 #    DESKTOP ENVIRONMENT                       #
 ################################################
@@ -78,7 +81,7 @@ sudo echo 'export PATH=$PATH:/usr/local/gradle/bin' >>~/.bashrc && \
 source ~/.bashrc
 
 # Install maven and configure
-wget https://www-eu.apache.org/dist/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz -P ~/apps/ && \
+wget https://www-eu.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz -P ~/apps/ && \
 sudo mkdir -p /usr/local/maven && \
 sudo rm -rf /usr/local/maven/* && \
 sudo tar -zxf ~/apps/apache-maven-*.tar.gz -C /usr/local/maven && \
