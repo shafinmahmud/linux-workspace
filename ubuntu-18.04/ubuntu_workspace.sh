@@ -12,6 +12,13 @@ sudo timedatectl set-local-rtc 1 --adjust-system-clock
 # Installing ibcanaberra gtk module if missing (for intellijIdea)
 sudo apt-get install --reinstall libcanberra-gtk-module
 
+# Installing Dash to Panel Gnome Shell extension and enabling it
+sudo apt install gnome-shell-extension-dash-to-panel && \
+gnome-shell-extension-tool -e gnome-shell-extension-dash-to-panel
+
+# Moving the Dock From Left (default) to the Bottom
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
+
 # Enable click to minimize on Ubuntu using command line
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 
@@ -121,10 +128,8 @@ mv ~/idea/WebStorm-*/* ~/idea/ && rm -rf ~/webstorm/WebStorm-*
 # Categories=Utility;Development;
 
 # Download and install MySQL and MySQL Workbench
-sudo apt-get update && \
-sudo apt-get install -y mysql-server && \
-sudo mysql_secure_installation && \
-sudo apt install -y mysql-workbench
+./mysql_install.sh
+./mysql_fix.sh
 
 # Installing Docker
 sudo apt-get install -y apt-transport-https ca-certificates  curl software-properties-common
