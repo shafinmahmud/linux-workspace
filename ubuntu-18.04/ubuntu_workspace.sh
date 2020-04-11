@@ -97,6 +97,15 @@ sudo echo 'export MAVEN_HOME=/usr/local/maven' >>~/.bashrc && \
 sudo echo 'export PATH=$PATH:/usr/local/maven/bin' >>~/.bashrc && \
 source ~/.bashrc
 
+# Install ANT and configure
+sudo mkdir -p /usr/local/ant && \
+sudo rm -rf /usr/local/ant/* && \
+sudo tar -zxf ~/apps/apache-ant-*.tar.gz -C /usr/local/ant && \
+sudo mv /usr/local/ant/apache-ant-*/* /usr/local/ant/ && \
+sudo echo 'export ANT_HOME=/usr/local/ant' >>~/.bashrc && \
+sudo echo 'export PATH=$PATH:$ANT_HOME/bin' >>~/.bashrc && \
+source ~/.bashrc
+
 # Install Nodejs npm and gulp
 curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
 sudo apt install nodejs
