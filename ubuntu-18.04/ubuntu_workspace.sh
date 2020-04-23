@@ -22,6 +22,12 @@ gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
 # Enable click to minimize on Ubuntu using command line
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 
+# Altering Workspace switch short key cause it conflict with IntelliJ.
+# This remove the offending shortcuts completely and allows IntelliJ to use them
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "[]"
+
+
 ################################################
 #    DESKTOP ENVIRONMENT                       #
 ################################################
