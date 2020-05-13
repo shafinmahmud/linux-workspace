@@ -3,7 +3,7 @@
 # First thing First! Update! Upgrade!
 sudo dnf update
 
-################################################
+##########################yes######################
 #    SOME TWEAKS AND FIXES                     #
 ################################################
 
@@ -92,6 +92,7 @@ curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
 sudo dnf install -y gcc-c++ make
 sudo dnf install -y nodejs
 sudo npm install -g gulp-cli
+sudo npm install -g bower
 
 # Install VSCode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc && \
